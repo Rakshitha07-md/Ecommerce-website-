@@ -1,0 +1,505 @@
+/* General styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f6fb;
+  color: #252b42;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Main app */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navigation bar */
+.navbar {
+  min-height: 80px;
+  padding: 18px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  color: white;
+  background: linear-gradient(135deg, #182848, #4b6cb7);
+  box-shadow: 0 4px 15px rgba(20, 35, 70, 0.18);
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.navbar a:hover {
+  color: #ffd166;
+}
+
+.navbar nav button {
+  padding: 10px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  background: transparent;
+  color: white;
+}
+
+.navbar nav button:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Login and registration page */
+.auth-section {
+  width: min(430px, calc(100% - 32px));
+  margin: 65px auto;
+  padding: 38px 32px;
+  text-align: center;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 12px 40px rgba(31, 48, 85, 0.12);
+  border: 1px solid #e8ecf5;
+}
+
+.auth-section h2 {
+  margin: 0 0 12px;
+  font-size: 29px;
+  color: #25365c;
+}
+
+.auth-section > p {
+  color: #68738a;
+  line-height: 1.6;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 25px;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 14px 15px;
+  border: 1px solid #d7deeb;
+  border-radius: 9px;
+  outline: none;
+  background: #fbfcff;
+  color: #252b42;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.auth-form input:focus {
+  border-color: #4b6cb7;
+  box-shadow: 0 0 0 3px rgba(75, 108, 183, 0.12);
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 9px;
+  color: white;
+  background: linear-gradient(135deg, #182848, #4b6cb7);
+  font-weight: 700;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.auth-form button:hover {
+  transform: translateY(-1px);
+  opacity: 0.94;
+}
+
+.auth-form button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.auth-section > p button {
+  padding: 0;
+  border: none;
+  background: none;
+  color: #4263a5;
+  font-weight: 700;
+}
+
+.auth-section > p button:hover {
+  text-decoration: underline;
+}
+
+.error {
+  color: #c62828 !important;
+  background: #fff0f0;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Hero section */
+.hero {
+  padding: 65px 20px;
+  text-align: center;
+  color: white;
+  background: linear-gradient(135deg, #182848, #4b6cb7);
+}
+
+.hero h2 {
+  margin-top: 0;
+  font-size: clamp(28px, 4vw, 42px);
+}
+
+.hero p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.shop-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 25px;
+  border-radius: 8px;
+  background: #ffd166;
+  color: #25365c;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.shop-button:hover {
+  background: #ffbf3f;
+}
+
+/* Main content */
+main {
+  flex: 1;
+  width: 100%;
+  padding: 35px 6%;
+}
+
+main section {
+  margin-bottom: 45px;
+}
+
+main section > h2 {
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 30px;
+  color: #25365c;
+}
+
+/* Product catalog */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+}
+
+.product-card {
+  overflow: hidden;
+  padding: 18px;
+  border-radius: 14px;
+  background: white;
+  box-shadow: 0 5px 20px rgba(31, 48, 85, 0.08);
+  border: 1px solid #e9edf5;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(31, 48, 85, 0.13);
+}
+
+.product-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: contain;
+  border-radius: 9px;
+  background: #f7f8fc;
+}
+
+.product-card h3 {
+  margin-bottom: 10px;
+}
+
+.product-card p {
+  color: #68738a;
+  line-height: 1.5;
+}
+
+.product-card .price {
+  color: #315aa6;
+}
+
+.product-card button,
+.checkout-button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  background: #315aa6;
+  font-weight: 700;
+}
+
+.product-card button:hover,
+.checkout-button:hover {
+  background: #243f79;
+}
+
+.product-card button:disabled {
+  background: #9ba4b5;
+  cursor: not-allowed;
+}
+
+/* Shopping cart and orders */
+.cart-section,
+.orders-section {
+  padding: 25px;
+  border-radius: 14px;
+  background: white;
+  box-shadow: 0 5px 20px rgba(31, 48, 85, 0.07);
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 15px 0;
+  padding: 18px;
+  border: 1px solid #e6eaf2;
+  border-radius: 10px;
+}
+
+.cart-item h3 {
+  margin-top: 0;
+}
+
+.cart-item p {
+  color: #68738a;
+  overflow-wrap: anywhere;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.quantity-controls button {
+  min-width: 36px;
+  min-height: 36px;
+  border: none;
+  border-radius: 7px;
+  background: #e8edfa;
+  color: #25365c;
+  font-weight: 700;
+}
+
+.quantity-controls .remove-button {
+  padding: 8px 12px;
+  background: #ffe8e8;
+  color: #bd2929;
+}
+
+.cart-total {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #e6eaf2;
+  text-align: right;
+}
+
+.cart-total h2 {
+  color: #315aa6;
+}
+
+.orders-section > button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background: #315aa6;
+  color: white;
+}
+
+/* Footer */
+footer {
+  margin-top: auto;
+  padding: 22px 15px;
+  text-align: center;
+  color: white;
+  background: linear-gradient(135deg, #182848, #4b6cb7);
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Mobile responsive design */
+@media (max-width: 600px) {
+  .navbar {
+    justify-content: center;
+    text-align: center;
+    padding: 18px;
+  }
+
+  .navbar nav {
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .auth-section {
+    margin: 35px auto;
+    padding: 28px 20px;
+  }
+
+  .auth-section h2 {
+    font-size: 25px;
+  }
+
+  main {
+    padding: 25px 16px;
+  }
+
+  .hero {
+    padding: 45px 18px;
+  }
+
+  .cart-section,
+  .orders-section {
+    padding: 16px;
+  }
+
+  .cart-item {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .cart-total {
+    text-align: left;
+  }
+}
+
+/* Admin dashboard */
+.admin-section {
+  padding: 25px;
+  background: #ffffff;
+  border: 1px solid #e5eaf4;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(31, 48, 85, 0.07);
+}
+
+.admin-section > h2 {
+  text-align: center;
+  color: #25365c;
+}
+
+.admin-section > p {
+  text-align: center;
+  color: #68738a;
+}
+
+.admin-section > h3 {
+  margin: 30px 0 20px;
+  color: #25365c;
+}
+
+.admin-form {
+  max-width: 600px;
+  margin: 25px auto;
+  padding: 25px;
+  border: 1px solid #e5eaf4;
+  border-radius: 12px;
+  background: #f9faff;
+}
+
+.admin-form h3 {
+  margin-top: 0;
+  color: #25365c;
+}
+
+.admin-form input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d7deeb;
+  border-radius: 8px;
+  background: white;
+}
+
+.admin-form button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #315aa6;
+  color: white;
+  font-weight: 700;
+}
+
+.admin-form button:hover {
+  background: #243f79;
+}
+
+.delete-product-button {
+  margin-top: 10px;
+  background: #c62828 !important;
+}
+
+.delete-product-button:hover {
+  background: #9f1d1d !important;
+}
+
+.success-message {
+  padding: 12px;
+  border-radius: 8px;
+  background: #e8f7ed;
+  color: #176b36;
+  text-align: center;
+}
+
+.admin-section > .checkout-button {
+  max-width: 220px;
+  display: block;
+  margin: 25px auto 0;
+}
+
+@media (max-width: 600px) {
+  .admin-section {
+    padding: 15px;
+  }
+
+  .admin-form {
+    padding: 16px;
+  }
+}
